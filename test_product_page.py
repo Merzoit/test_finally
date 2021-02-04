@@ -3,7 +3,7 @@ from test_finally.pages.product_page import ProductPage
 
 def test_guest_can_add_product_to_basket(browser):
     """ Test-case """
-    url = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+    url = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     product_page = ProductPage(browser, url)
     product_page.open()
     product_page.add_to_basket_buttton()

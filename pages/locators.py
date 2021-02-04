@@ -13,4 +13,5 @@ class ProductPageLocators():
     PRODUCT_NAME = (By.TAG_NAME, 'h1')
     PRODUCT_CUR_NAME = (By.TAG_NAME, 'strong')
     BASKET_INFO = (By.CLASS_NAME, 'alert-info')
-    PRODUCT_PRICE = (By.CLASS_NAME, 'price_color')
+    PRODUCT_INFO = (By.CLASS_NAME, 'product_main')
+    

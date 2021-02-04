@@ -16,12 +16,18 @@ class ProductPage(BasePage):
         """ Check name coincidence """
         cur_block = self.browser.find_element(*ProductPageLocators.ADD_TXT)
         name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        print(name)
         cur_name = cur_block.find_element(*ProductPageLocators.PRODUCT_CUR_NAME).text
-        print(cur_name)
         assert name == cur_name, 'Product name not coincidence'
 
     def check_basket_info(self):
-        """ Check basket info block """
+        """ Check basket info block and price coincidence """
         basket_info_block = self.browser.find_element(*ProductPageLocators.BASKET_INFO)
         assert basket_info_block, 'Basket info block not present'
+        basket_total = basket_info_block.find_element(*ProductPageLocators.PRODUCT_CUR_NAME).text
+        product_info_block = self.browser.find_element(*ProductPageLocators.PRODUCT_INFO)
+        cur_price = product_info_block.find_element_by_tag_name('p').text
+        print(basket_total + '1')
+        print(cur_price + '2')
+        assert basket_total == cur_price, 'Product price not coincidence'
+
+   
